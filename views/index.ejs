@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Notes</title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="font-awesome.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital@1&family=Oswald:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Londrina+Solid:wght@100;400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <section class="wholeThing">
+    <section class="title">
+      <h1 id="read">READ THESE NOTES</h1>
+      <h2>W8! Check to see if you forgot anything!</h2>
+    </section>
+    <section class="notes">
+      <section class="othersTitle">
+        <img src="stop.jpg" id="stop">
+    </section>
+      <ul class="messages">
+        <% for(var i=0; i<messages.length; i++) {%>
+          <li class="message">
+            <span><%=messages[i].msg%></span><br><br>
+            <span><%=messages[i].thumbUp%></span>
+            <span id="<%=messages[i]._id%>"></span>
+            <span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+            <span><i class="fa fa-trash" aria-hidden="true"></i></span>
+          </li>
+          <% } %>
+      </ul>
+    </section>
+    <section class="yourNote">
+      <h3 id="noteTitle">Your note</h3>
+      <form action="/messages" method="POST" >
+        <textarea type="text" placeholder="" name="msg"></textarea>
+        <button type="submit">add your note to the message board</button>
+      </form>
+    </section>
+  </section>
+  <script src="main.js"></script>
+
+</body>
+
+</html>
